@@ -13,28 +13,39 @@ main{
     width: 100%;
     background-color: black;
     display: grid;
-    grid-gap: 20px;
-    padding: 20px;
-    grid-template-columns: 30% 1fr;
-    grid-template-rows: 70px 30% 1fr;
-    grid-template-areas: "header header"
-                         "aside section"
-                         "footer footer"
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 70px 2fr 1fr 1fr;
+    grid-gap: 10px;
+    padding: 10px;
+    grid-template-areas: "header header header"
+                         "section section section"
+                         "div-left bottom-up div-right"
+                         "div-left bottom-down div-right"
     ;
 }
 header{
-    background-color: darkolivegreen;
-    grid-area: header
-}
-aside{
-    background-color: darkmagenta;
-    grid-area: aside;
+    background-color: darkcyan;
+    grid-area: header;
 }
 section{
-    background-color: darkcyan;
+    background-color: dodgerblue;
     grid-area: section;
 }
-footer{
+#div-left{
+    background-color: darkolivegreen;
+    grid-area: div-left;
+}
+#bottom-up{
     background-color: darkorchid;
-    grid-area: footer;
+    grid-area: bottom-up;
+}
+#bottom-down{
+    background-color: darkorange;
+    grid-area: bottom-down;
+
+}
+#div-right{
+    background-color: darkgrey;
+    grid-area: div-right;
+
 }
