@@ -2,50 +2,71 @@
 margin : 0;
 padding : 0;
 box-sizing : border-box;
-color: white;
 }
 html,body{
 height : 100%;
 width : 100%;
+color: white;
 }
 main{
     height: 100%;
-    width: 100%;
+    width:100%;
     background-color: black;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 70px 2fr 1fr 1fr;
-    grid-gap: 10px;
-    padding: 10px;
-    grid-template-areas: "header header header"
-                         "section section section"
-                         "div-left bottom-up div-right"
-                         "div-left bottom-down div-right"
-    ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-header{
-    background-color: darkcyan;
-    grid-area: header;
+#box{
+    width:70vw;
+    background-color: rgb(245, 245, 245);
+    border-radius: 20px;
+    padding:30px;
 }
-section{
-    background-color: dodgerblue;
-    grid-area: section;
+#box h1{
+    color:black;
+    font-size: 50;
+    font-weight: 100;
+    font-family: monospace;
+    margin-bottom: 20px;
+    text-align: center;
 }
-#div-left{
-    background-color: darkolivegreen;
-    grid-area: div-left;
-}
-#bottom-up{
-    background-color: darkorchid;
-    grid-area: bottom-up;
-}
-#bottom-down{
-    background-color: darkorange;
-    grid-area: bottom-down;
 
+#box span{
+    color: rgb(0, 64, 255);
+    font-weight: bold;
 }
-#div-right{
-    background-color: darkgrey;
-    grid-area: div-right;
 
+#outer{
+    height:2vh;
+    width:100%;
+    background-color: rgb(194, 193, 193);
+    border-radius: 50px;
+}
+#inner{
+    height: 100%;
+    width:0%;
+    background-color: green;
+    border-radius: 50px;
+}
+#bottom{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin-top: 5vh;
+}
+#bottom h1{
+    font: 300;
+    font-weight: 100;
+    color: black;
+}
+button{
+    padding:1.2vw 2.5vw;
+    color: white;
+    background-color:  green;
+    border-radius: 10px;
+    border: none;
+}
+button:active {
+    scale: 0.95;
 }
