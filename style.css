@@ -13,41 +13,22 @@ main{
     width:100%;
     background-color: black;
     color:black;
-    display: flex;
-    gap:10px;
-    align-items: flex-start;
-    justify-content: center;
-    flex-wrap: wrap;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    cursor: none;
 }
 
-.card{
-    width:250px;
-    background-color: rgb(240, 240, 240);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding:20px;
-    margin: 10px;
+#cursor{
+    height:8vh;
+    position:fixed;
+    left:0%;
+    top:0%;
+    z-index:10
 }
-.card img{
-    height:150px;
-    width:150px;
-    object-fit: cover;
-    border-radius: 50%;
-}
-h3{
-    font-size: 26px;
-    white-space: nowrap;
-}
-h4{
-    font-size: 22px;
-    white-space: nowrap;
-    color:rgb(3, 3, 167)
-}
-p{
-    font-size: 13px;
-    text-align: center;
+
+#slug{
+    height:3vh;
+    rotate:-75deg;
+    z-index:9;
+    position:fixed;
+    
 }
