@@ -5,7 +5,7 @@ function App() {
   const [notes, setnotes] = useState([]);
 
   function fetchNotes(){
-    axios.get("http://localhost:3000/api/notes").then((res) => {
+    axios.get("https://regularpratice.onrender.com/").then((res) => {
       setnotes(res.data.notes);
     });
   }
@@ -20,7 +20,7 @@ function App() {
     const {title,description} = e.target.elements
     console.log(title.value,description.value)
 
-    axios.post("http://Localhost:3000/api/notes",{
+    axios.post("https://regularpratice.onrender.com/",{
       title: title.value,
       description: description.value
     }).then((res)=>{
@@ -31,7 +31,7 @@ function App() {
 
   function handleDeleteNote(noteId){
 
-    axios.delete("http://localhost:3000/api/notes/"+noteId)
+    axios.delete("https://regularpratice.onrender.com/"+noteId)
     .then((res)=>{
       console.log(res.data)
       fetchNotes()
