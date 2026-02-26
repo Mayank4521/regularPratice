@@ -8,28 +8,7 @@ const imagekit = new ImageKit({
 })
 
 const postCreateController = async (req,res)=>{
-    console.log(req.body, req.file)
-
-    const token = req.cookies.token
-   
-    if(!token){
-        return res.status(401).json({
-            message:"token not provided,unauthorized access"
-        })
-    }
-
-    let decode= null
-
-    try{
-    decode = jwt.verify(token,process.env.JWT_SECRET)}
-    catch(err){
-        return res.status(401).json({
-            message:"unauthorized access"
-        })
-    }
-
-    console.log(decode)
-
+    
     const file = await imagekit.files.upload({
         file: await toFile(Buffer.from(req.file.buffer),'file'),
         fileName: "Test",
@@ -39,7 +18,7 @@ const postCreateController = async (req,res)=>{
     const post = await postModel.create({
         caption: req.body.caption,
         imgUrl: file.url,
-        user: decode.id
+        user: res.user.id
     })
 
     res.status(201).json({
@@ -51,25 +30,10 @@ const postCreateController = async (req,res)=>{
 }
 
 async function getPostController(req,res){
-    const token= req.cookies.token
-
-    if(!token){
-       return res.status(401).json({
-        message:"UnAuthorized Access"
-       })
-    }
-
-    let decoded = null
-
-    try{
-        decoded = jwt.verify(token,process.env.JWT_SECRET)
-    }catch(err){
-    return res.status(401).json({
-            message: "Invalid token"
-        })
-    }
+    
+    const userId = res.user.id
     const posts = await postModel.find({
-        user: decoded.id
+        user: userId
     })
 
     res.status(200).json({
@@ -79,24 +43,10 @@ async function getPostController(req,res){
 }
 
 async function getPostDetailsController(req,res){
-    const token = req.cookies.token
-
-    if(!token){
-        return res.status(401).json({
-            message:"UnAuthorized Access"
-        })
-    }
-
-    let decoded
-    try{
-        decoded= jwt.verify(token,process.env.JWT_SECRET)
-    }catch(err){
-        return res.status(401).json({
-            message:"UnAuthorized Access"
-        })
-    }
     
-    const userId = decoded.id
+    
+    
+    const userId = res.user.id
     const postId = req.params.postId
 
     const post = await postModel.findById(postId)
