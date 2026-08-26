@@ -1,0 +1,83 @@
+.feed-page {
+  display: flex;
+  color: white;
+  flex-direction: column;
+  padding-top:45px;
+
+  .feed {
+    max-width: 350px;
+    width: 100%;
+
+    .posts {
+      width: 100%;
+      display:flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      padding-block:0.25rem;
+
+      .post {
+        width: 100%;
+        padding:1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+        background-color: rgb(41, 40, 40);
+        border-radius: 3%;
+
+        .user {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          .imgWrapper {
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid transparent;
+            background: conic-gradient(rgb(255, 0, 255),rgb(85, 85, 248),rgb(126, 192, 249),rgb(244, 148, 164),rgb(253, 64, 253)) border-box;
+
+            img {
+              width: 2.5rem;
+              aspect-ratio: 1/1;
+              border-radius: 50%;
+              object-fit: cover;
+            }
+          }
+        }
+        .postImage {
+          max-height:60vh;
+          width: 100%;
+          object-fit:cover;
+          border-radius: 3%;
+
+        }
+        
+        .icons{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .left-icons{
+                display:flex;
+                gap:10px;
+
+            }
+            svg{
+                width:1rem;
+                aspect-ratio:1/1;
+                fill:white;
+
+                &.liked{
+                    fill:red;
+                }
+            }
+            button{
+                background: none;
+                border: none;
+                cursor: pointer;
+            }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+.follow-page{
+    width: 100%;
+    height: 100vh;
+    color:white;
+    display: flex;
+    flex-direction: column;
+    gap:0.5rem;
+    padding-bottom:0.5rem;
+    padding-top:45px;
+
+    .follow-container{
+        max-width: 350px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        border-radius: 1rem;
+        padding-block:1rem;
+        padding-inline:2rem;
+        gap:0.75rem;
+        background-color: rgb(41, 40, 40);
+
+        .follower-list, .following-list, .other-user, .pendings{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            padding-block:0.5rem;
+            gap: 1rem;
+            border-bottom:2px solid rgb(52, 49, 49);
+
+            h2{
+                font-size:large;
+                font-weight: 500;
+                text-decoration: underline;
+            }
+
+            .user {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          text-align: center;
+          .img-wrapper {
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid transparent;
+            background: conic-gradient(rgb(255, 0, 255),rgb(85, 85, 248),rgb(126, 192, 249),rgb(244, 148, 164),rgb(253, 64, 253)) border-box;
+
+            img {
+              width: 1.5rem;
+              aspect-ratio: 1/1;
+              border-radius: 50%;
+              object-fit: cover;
+            }
+          }
+          .follow-button{
+                border: none;
+                outline: none;
+                padding-block: 0.5rem;
+                padding-inline: 1rem;
+                border-radius: 0.5rem;
+                cursor: pointer;
+                background-color: rgb(52, 49, 49);
+                color: whitesmoke;
+            }
+        }
+        }
+        
+    }
+}

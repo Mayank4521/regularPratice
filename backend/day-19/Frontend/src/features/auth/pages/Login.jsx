@@ -19,7 +19,7 @@ const Login = () => {
         },
         {
           withCredentials: true,
-        },
+        }
       )
       .then((res) => console.log(res.data));
   }

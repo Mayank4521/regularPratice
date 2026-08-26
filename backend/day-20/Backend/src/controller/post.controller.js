@@ -106,6 +106,9 @@ async function likePostController(req,res){
 
 async function getFeedController(req,res){
     const post = await postModel.find().populate("user")
+    .map(async(post)=>{
+        return post.caption
+    })
 
     return res.status(200).json({
         message:"Feed fetched successfully",

@@ -21,7 +21,7 @@ const postCreateController = async (req,res)=>{
         user: res.user.id
     })
 
-    res.status(201).json({
+    return res.status(201).json({
         message:"post created successfully",
         post
     })
