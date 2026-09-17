@@ -1,36 +1,33 @@
 import React, { useState } from "react";
-import "../style/form.scss";
-import { Link } from "react-router";
-import { useAuth } from "../hooks/useAuth";
-import { useNavigate } from "react-router";
 import FormGroup from "../components/FormGroup";
+import "../style/form.scss";
+import { Link, useNavigate } from "react-router";
+import { useAuth } from "../hooks/useAuth";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const { handleLogin, loading } = useAuth();
   const navigate = useNavigate();
 
-  if (loading) {
+  if (loading)
     return (
       <main>
-        <h1>Loading... </h1>
+        <h1>Loading</h1>
       </main>
     );
-  }
 
-  async function handleSubmit(e) {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    await handleLogin({ email, username, password });
+    await handleLogin({ username, email, password });
     navigate("/");
-  }
-
+  };
   return (
     <main>
       <div className="form-container">
-        <h2>Login</h2>
+        <h1>Login</h1>
         <form onSubmit={handleSubmit}>
           <FormGroup
             label="Username"
@@ -54,7 +51,7 @@ const Login = () => {
         </form>
         <p>
           Don't have an account?{" "}
-          <Link className="link" to="/register">
+          <Link to="/register" className="link">
             Register
           </Link>
         </p>
