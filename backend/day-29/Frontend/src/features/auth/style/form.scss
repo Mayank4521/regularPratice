@@ -18,19 +18,23 @@ main {
     min-width: 350px;
     align-items: center;
 
-    h1 {
+    h2 {
       font-size: 2rem;
     }
     form {
         width: 100%;
       @include flex-column(2rem);
 
-      input{
-        padding-inline: 1.5rem;
-        padding-block: 1rem;
-        border-radius: 50px;
+      .form-group {
+        @include flex-column(0.5rem);
+
+        input{
+        padding-inline: 1rem;
+        padding-block: 0.5rem;
+        border-radius: 10px;
         border: none;
         outline: none;
+      }
       }
       
     }
