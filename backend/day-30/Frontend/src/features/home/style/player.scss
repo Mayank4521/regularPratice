@@ -1,0 +1,130 @@
+.player {
+  width: min(100%, 46rem);
+  padding: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 1.25rem;
+  background: linear-gradient(135deg, #292032, #17151d);
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.28);
+}
+
+.player__track {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.player__artwork {
+  width: 4.5rem;
+  height: 4.5rem;
+  flex: 0 0 auto;
+  border-radius: 0.75rem;
+  object-fit: cover;
+}
+
+.player__eyebrow {
+  margin-bottom: 0.3rem;
+  color: #e7a9ff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.player h2 {
+  max-width: 31rem;
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  line-height: 1.2;
+}
+
+.player__track span {
+  display: block;
+  margin-top: 0.35rem;
+  color: #a7a1b0;
+  font-size: 0.85rem;
+  text-transform: capitalize;
+}
+
+.player__timeline {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1.4rem 0 1rem;
+  color: #aaa3b4;
+  font-size: 0.75rem;
+}
+
+.player__timeline input {
+  flex: 1;
+  accent-color: #e7a9ff;
+  cursor: pointer;
+}
+
+.player__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.player button,
+.player select {
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 0.65rem;
+  color: #f7f3fa;
+  background: rgba(255, 255, 255, 0.07);
+  font: inherit;
+}
+
+.player button {
+  min-height: 2rem;
+  padding: 0 0.85rem;
+  cursor: pointer;
+}
+
+.player button:hover,
+.player select:hover {
+  border-color: #e7a9ff;
+  background: rgba(231, 169, 255, 0.13);
+}
+
+.player__play {
+  width: 3rem;
+  aspect-ratio: 1/1;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 50% !important;
+  color: #413d44 !important;
+  background: #d8b7e4 !important;
+  font-size: 1.5rem !important;
+}
+
+.player__speed {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-left: 0.5rem;
+  color: #f3eff7;
+  font-size: 0.8rem;
+}
+
+.player select {
+  padding: 0.32rem 0.4rem;
+  cursor: pointer;
+
+  option {
+    background: #292032;
+  }
+}
+
+@media (max-width: 30rem) {
+  .player__controls {
+    gap: 0.4rem;
+  }
+
+  .player__speed {
+    width: 100%;
+    justify-content: center;
+    margin: 0.4rem 0 0;
+  }
+}

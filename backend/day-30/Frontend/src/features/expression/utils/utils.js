@@ -40,7 +40,7 @@ export const setupMediaPipeline = async ({ videoRef, landmarkerRef }) => {
       // Save MediaPipe instance
       landmarkerRef.current = faceLandmarker;
 
-      console.log("Everything is ready 🚀");
+      
     } catch (error) {
       console.error(error);
     }
@@ -51,7 +51,7 @@ export const detectFace = ({videoRef, landmarkerRef, setExpression }) => {
       !videoRef.current ||
       !landmarkerRef.current
     ) {
-      return;
+      return null;
     }
 
     const detectExpression = (data) => {
@@ -59,16 +59,20 @@ export const detectFace = ({videoRef, landmarkerRef, setExpression }) => {
       data.mouthSmileLeft > 0.5 &&
       data.mouthSmileRight > 0.5
     ) {
-      setExpression("happy 😄");
+      setExpression("happy");
+      return "happy";
     } else if (data.jawOpen > 0.3) {
-      setExpression("Surprised 😮");
+      setExpression("Surprised");
+      return "surprised";
     } else if (
       data.mouthFrownLeft > 0.01 &&
       data.mouthFrownRight > 0.01
     ) {
-      setExpression("Sad 😢");
+      setExpression("Sad");
+      return "sad";
     } else {
-      setExpression("Neutral 😐");
+      setExpression("Neutral");
+      return "Neutral";
     }
   };
 
@@ -92,8 +96,12 @@ export const detectFace = ({videoRef, landmarkerRef, setExpression }) => {
             item.score;
         });
 
-        detectExpression(expressions);
+        return detectExpression(expressions);
       }
+
+      setExpression("No face detected");
     }
+
+    return null;
 
   };

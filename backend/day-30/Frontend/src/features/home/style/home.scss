@@ -1,0 +1,30 @@
+.home-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+}
+.expression-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.home-page__workspace {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(18rem, 24rem);
+    align-items: center;
+    gap: 2rem;
+    width: min(100%, 60rem);
+}
+
+@media (max-width: 48rem) {
+    .home-page__workspace {
+        grid-template-columns: 1fr;
+        width: min(100%, 34rem);
+    }
+}
