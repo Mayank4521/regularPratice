@@ -15,5 +15,6 @@ app.use(
 );
 app.use("/api/auth", authRouter);
 app.use("/api/songs",songRouter)
+app.use(express.static("./public"))
 
 module.exports = app;
