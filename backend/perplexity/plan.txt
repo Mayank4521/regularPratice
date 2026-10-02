@@ -1,0 +1,25 @@
+Authentication system
+chat with AI
+chat history
+message history
+AI with Internet research feature
+
+
+
+Data modeling 
+
+user, chat, message
+
+user
+_id, username, email, password, verified:false, createdAt, updatedAt
+
+chat
+_id, user, title, createdAt, updatedAt
+
+message
+_id, chat, content, role:[user,AI]
+
+
+googlecloud 
+library 
+authconsent screen
