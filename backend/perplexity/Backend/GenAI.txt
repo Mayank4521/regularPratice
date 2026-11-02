@@ -1,0 +1,7 @@
+Generative AI = content generate krna [text,code,image,audio,video]
+LLM = large language model
+AI service provider = 
+1. Training LLM,
+2. Hosting an LLM,
+3. Providing APIs to access the LLM
+eg. OpenAI, Google,Microsoft, Anthropic, Mistral, etc

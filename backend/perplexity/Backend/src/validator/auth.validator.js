@@ -39,3 +39,15 @@ export const loginValidator= [
         .isString().withMessage("Password must be a string")
         .isLength({ min: 8 }).withMessage("Password must be at least 8 characters"),
     validate]
+
+export const resendVerificationEmailValidator = [
+    body("email")
+        .isString().withMessage("Email must be a string")
+        .bail()
+        .trim()
+        .notEmpty().withMessage("Email is required")
+        .bail()
+        .isEmail().withMessage("A valid email is required")
+        .normalizeEmail(),
+    validate
+]
